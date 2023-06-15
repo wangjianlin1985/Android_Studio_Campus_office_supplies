@@ -1,0 +1,99 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Goods" table="Goods">
+
+          <!-- 主键物品编号 -->
+          <id name="goodNo" type="string" length="20">
+            <generator class="assigned"/>
+          </id>
+
+          <!-- 多对一属性: 商品类别 -->
+          <many-to-one name="goodClassObj"
+            column="goodClassObj"
+            class="GoodClass"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 物品名称 -->
+          <property
+            name="goodName"
+            column="goodName"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单图片属性: 物品图片 -->
+          <property
+            name="goodPhoto"
+            column="goodPhoto"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 规格型号 -->
+          <property
+            name="specModel"
+            column="specModel"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 计量单位 -->
+          <property
+            name="measureUnit"
+            column="measureUnit"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单整型属性: 库存数量 -->
+          <property
+            name="stockCount"
+            column="stockCount"
+            type="int"
+
+          />
+
+          <!-- 简单浮点型属性: 单价 -->
+          <property
+            name="price"
+            column="price"
+            type="float"
+          />
+
+          <!-- 简单浮点型属性: 金额 -->
+          <property
+            name="totalMoney"
+            column="totalMoney"
+            type="float"
+          />
+
+          <!-- 简单字符串属性: 仓库 -->
+          <property
+            name="storeHouse"
+            column="storeHouse"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 备注 -->
+          <property
+            name="goodMemo"
+            column="goodMemo"
+            type="string"
+            length="500"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

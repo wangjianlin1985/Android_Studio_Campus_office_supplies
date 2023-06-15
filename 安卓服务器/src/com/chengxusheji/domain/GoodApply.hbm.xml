@@ -1,0 +1,70 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="GoodApply" table="GoodApply">
+
+          <!-- 主键申请id -->
+          <id name="applyId" column="applyId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 审请的用品 -->
+          <many-to-one name="goodObj"
+            column="goodObj"
+            class="Goods"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单整型属性: 申请数量 -->
+          <property
+            name="applyCount"
+            column="applyCount"
+            type="int"
+
+          />
+
+          <!-- 简单字符串属性: 申请时间 -->
+          <property
+            name="applyTime"
+            column="applyTime"
+            type="string"
+            length="20"
+          />
+
+          <!-- 多对一属性: 申请人 -->
+          <many-to-one name="personObj"
+            column="personObj"
+            class="Person"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 经办人 -->
+          <property
+            name="handlePerson"
+            column="handlePerson"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 备注 -->
+          <property
+            name="applyMemo"
+            column="applyMemo"
+            type="string"
+            length="500"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

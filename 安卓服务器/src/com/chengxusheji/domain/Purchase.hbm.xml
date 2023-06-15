@@ -1,0 +1,83 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Purchase" table="Purchase">
+
+          <!-- 主键购置id -->
+          <id name="purchaseId" column="purchaseId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 购置物品 -->
+          <many-to-one name="goodObj"
+            column="goodObj"
+            class="Goods"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单浮点型属性: 购置价格 -->
+          <property
+            name="price"
+            column="price"
+            type="float"
+          />
+
+          <!-- 简单整型属性: 购置数量 -->
+          <property
+            name="buyCount"
+            column="buyCount"
+            type="int"
+
+          />
+
+          <!-- 简单浮点型属性: 购置金额 -->
+          <property
+            name="totalMoney"
+            column="totalMoney"
+            type="float"
+          />
+
+          <!-- 简单日期型属性: 入库时间 -->
+          <property
+            name="inDate"
+            column="inDate"
+            	type="timestamp"
+            	length="10"
+          />
+
+          <!-- 简单字符串属性: 经办人 -->
+          <property
+            name="operatorMan"
+            column="operatorMan"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 保管人 -->
+          <property
+            name="keepMan"
+            column="keepMan"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 仓库 -->
+          <property
+            name="storeHouse"
+            column="storeHouse"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
