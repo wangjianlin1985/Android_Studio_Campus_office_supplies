@@ -1,6 +1,6 @@
 # Android_Studio_Campus_office_supplies
 安卓Android校园办公用品管理系统可导入Studio毕业源码案例设计
-开发环境: Myclipse/Eclipse/Idea都可以(服务器端) + Eclipse(手机客户端) + mysql数据库
+## 开发环境: Myclipse/Eclipse/Idea都可以(服务器端) + Eclipse(手机客户端) + mysql数据库
 ## 系统客户端和服务器端架构技术: 界面层，业务逻辑层，数据层3层分离技术，MVC设计思想！
 ## 服务器和客户端数据通信格式： XML格式(用于传输查询的记录集)和json格式(用于传输单个的对象信息) 
 对系统界面描述：
